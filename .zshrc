@@ -83,7 +83,7 @@ alias pacm="makepkg -fci"  # '[m]ake'           - make package from PKGBUILD fil
 
 
 # Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
