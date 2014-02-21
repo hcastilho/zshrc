@@ -2,7 +2,9 @@
 ZSH=$HOME/.oh-my-zsh
 
 #stty ixany
-stty stop undef # to unmap ctrl-s
+#stty stop undef # to unmap ctrl-s
+
+setopt interactivecomments
 
 export SHELL=/usr/bin/zsh # TODO
 export TERM="xterm-256color"
@@ -53,7 +55,6 @@ alias ping='ping -c 5'
 alias ..='cd ..'
 
 # ls
-alias ls='ls --color=auto'
 alias ls='ls -hF --color=auto'
 alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
