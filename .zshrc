@@ -3,10 +3,12 @@ ZSH=$HOME/.oh-my-zsh
 
 #stty ixany
 #stty stop undef # to unmap ctrl-s
+#
 
 setopt interactivecomments
 
 export SHELL=/usr/bin/zsh # TODO
+export EDITOR=/usr/bin/vim
 export TERM="xterm-256color"
 export ZSH_TMUX_AUTOSTART=true
 
@@ -19,6 +21,7 @@ ZSH_THEME="agnoster"
 
 # User configuration
 bindkey -v      # vi mode
+set -o vi
 
 # fasd
 eval "$(fasd --init auto)"
@@ -29,15 +32,16 @@ export WORKON_HOME="$HOME/.virtualenvs"
 # PATHS
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:~/scripts/:
-# export MANPATH="/usr/local/man:$MANPATH"
-#export PYTHONPATH=$PYTHONPATH:~/Development/google_appengine
-#export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+export PATH=$PATH:~/.gem/ruby/2.1.0/bin
+export PATH=$PATH:/opt/android-sdk/tools/
+export PATH=$PATH:/opt/android-sdk/platform-tools/
 
-#. /usr/share/zsh/site-contrib/powerline.zsh
+#
+setxkbmap -option caps:escape
 
 # Aliases
 alias vi='vim'
-
+alias utar='tar -zxvf'
 alias ackpy='ack --smart-case --python'
 alias ackjs='ack --smart-case --js'
 alias ackhtml='ack --smart-case --html'
@@ -57,7 +61,7 @@ alias ..='cd ..'
 # ls
 alias ls='ls -hF --color=auto'
 alias lr='ls -R'                    # recursive ls
-alias ll='ls -l'
+alias ll='ls -lh'
 alias la='ll -A'
 alias lx='ll -BX'                   # sort by extension
 alias lz='ll -rS'                   # sort by size
@@ -117,20 +121,6 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git django archlinux virtualenv virtualenvwrapper vim-mode tmux systemd colored-man)
+plugins=(git django archlinux virtualenv virtualenvwrapper vi-mode tmux systemd colored-man)
 
 source $ZSH/oh-my-zsh.sh
-
-
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
